@@ -1,0 +1,25 @@
+molecule uracil_monomer {
+    0 1
+    N    -1.4888766    1.1619633     0.0000000 
+    H    -0.4604549    1.2132001     0.0000000 
+    C    -2.0557020   -0.1012312     0.0000000 
+    O    -1.3529764   -1.1143219     0.0000000 
+    C    -3.5024998   -0.1231361     0.0000000 
+    H    -4.0084680   -1.0726395     0.0000000 
+    C    -4.1808975    1.0432864     0.0000000 
+    H    -5.2597746    1.0899796     0.0000000 
+    N    -3.5337143    2.2446046     0.0000000 
+    H    -4.0427155    3.1130731     0.0000000 
+    C    -2.1503561    2.3762154     0.0000000 
+    O    -1.5987212    3.4562309     0.0000000 
+
+    units angstrom
+    no_reorient
+    symmetry c1
+}
+
+set basis aug-cc-pVTZ
+
+scf_e, scf_wfn = energy('pbe0', return_wfn=True)
+HOMO = scf_wfn.epsilon_a_subset('AO', 'ALL').np[scf_wfn.nalpha()-1]
+print("\nThe HOMO energy is %16.8f hartree" % HOMO)

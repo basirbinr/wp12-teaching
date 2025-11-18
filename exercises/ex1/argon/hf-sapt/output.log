@@ -1,0 +1,15 @@
+2025-11-18:10:53:12,629 INFO     [psi4.driver.task_planner:285] PLANNING Atomic:  keywords={'function_kwargs': {}}
+2025-11-18:10:53:12,630 INFO     [psi4.driver.driver:523] Compute energy(): method=sapt0, basis=aug-cc-pvqz, molecule=argon_dimer, nre=45.59739677350792
+2025-11-18:10:53:16,611 INFO     [psi4.driver.driver:526] Return energy(): -0.0004905340393592146
+2025-11-18:10:53:16,619 INFO     [psi4.driver.task_planner:285] PLANNING Atomic:  keywords={'DF_INTS_IO': 'NONE', 'SAPT__D_CONVERGENCE': 1e-09, 'SAPT__E_CONVERGENCE': 1e-09, 'SCF__INTS_TOLERANCE': 1e-12, 'SAPT__SAPT_LEVEL': 'SAPT0', 'function_kwargs': {}}
+2025-11-18:10:53:16,620 INFO     [psi4.driver.driver:523] Compute energy(): method=sapt2, basis=aug-cc-pvqz, molecule=argon_dimer, nre=45.59739677350792
+2025-11-18:10:53:25,396 INFO     [psi4.driver.driver:526] Return energy(): -0.00047722646065264757
+2025-11-18:10:53:25,404 INFO     [psi4.driver.task_planner:285] PLANNING Atomic:  keywords={'DF_INTS_IO': 'NONE', 'SAPT__D_CONVERGENCE': 1e-09, 'SAPT__E_CONVERGENCE': 1e-09, 'SCF__INTS_TOLERANCE': 1e-12, 'SAPT__SAPT_LEVEL': 'SAPT2', 'function_kwargs': {}}
+2025-11-18:10:53:25,405 INFO     [psi4.driver.driver:523] Compute energy(): method=sapt2+, basis=aug-cc-pvqz, molecule=argon_dimer, nre=45.59739677350792
+2025-11-18:10:53:49,425 INFO     [psi4.driver.driver:526] Return energy(): -0.0004311779567874447
+2025-11-18:10:53:49,434 INFO     [psi4.driver.task_planner:285] PLANNING Atomic:  keywords={'DF_INTS_IO': 'NONE', 'SAPT__DO_CCD_DISP': 0, 'SAPT__D_CONVERGENCE': 1e-09, 'SAPT__E_CONVERGENCE': 1e-09, 'SCF__INTS_TOLERANCE': 1e-12, 'SAPT__SAPT_LEVEL': 'SAPT2+', 'function_kwargs': {}}
+2025-11-18:10:53:49,435 INFO     [psi4.driver.driver:523] Compute energy(): method=sapt2+(3), basis=aug-cc-pvqz, molecule=argon_dimer, nre=45.59739677350792
+2025-11-18:10:54:19,709 INFO     [psi4.driver.driver:526] Return energy(): -0.00040587453645784643
+2025-11-18:10:54:19,717 INFO     [psi4.driver.task_planner:285] PLANNING Atomic:  keywords={'DF_INTS_IO': 'NONE', 'SAPT__DO_CCD_DISP': 0, 'SAPT__DO_THIRD_ORDER': 0, 'SAPT__D_CONVERGENCE': 1e-09, 'SAPT__E_CONVERGENCE': 1e-09, 'SCF__INTS_TOLERANCE': 1e-12, 'SAPT__SAPT_LEVEL': 'SAPT2+3', 'function_kwargs': {}}
+2025-11-18:10:54:19,718 INFO     [psi4.driver.driver:523] Compute energy(): method=sapt2+3, basis=aug-cc-pvqz, molecule=argon_dimer, nre=45.59739677350792
+2025-11-18:10:54:58,907 INFO     [psi4.driver.driver:526] Return energy(): -0.0004192846815641504

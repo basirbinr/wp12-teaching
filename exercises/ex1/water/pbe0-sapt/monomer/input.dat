@@ -1,0 +1,19 @@
+molecule water_monomer {
+    0 1
+    O  -1.551007  -0.114520   0.000000
+    H  -1.934259   0.762503   0.000000
+    H  -0.599677   0.040712   0.000000
+
+    units angstrom
+    no_reorient
+    symmetry c1
+}
+
+set basis aug-cc-pVQZ
+
+# Calculate PBE0 energy and find the HOMO
+scf_e, scf_wfn = energy('pbe0', return_wfn=True)
+
+HOMO = scf_wfn.epsilon_a_subset('AO', 'ALL').np[scf_wfn.nalpha()-1]
+
+print("\nThe HOMO energy is %16.8f hartree" % HOMO)

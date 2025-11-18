@@ -1,0 +1,2 @@
+2025-11-18:12:04:59,248 INFO     [psi4.driver.task_planner:285] PLANNING Atomic:  keywords={'SAPT_DFT_GRAC_SHIFT_A': 0.06935993, 'SAPT_DFT_GRAC_SHIFT_B': 0.06935993, 'function_kwargs': {}}
+2025-11-18:12:04:59,250 INFO     [psi4.driver.driver:523] Compute energy(): method=sapt(dft), basis=aug-cc-pvtz, molecule=uracil_dimer, nre=1040.0053320445304
