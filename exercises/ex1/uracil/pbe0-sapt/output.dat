@@ -1295,3 +1295,51 @@ Total time:
 
   ==> Integral Setup <==
 
+  ==> DiskDFJK: Density-Fitted J/K Matrices <==
+
+    J tasked:                  Yes
+    K tasked:                  Yes
+    wK tasked:                  No
+    OpenMP threads:              1
+    Integrals threads:           1
+    Memory [MiB]:              375
+    Algorithm:                Disk
+    Integral Cache:           SAVE
+    Schwarz Cutoff:          1E-12
+    Fitting Condition:       1E-10
+
+   => Auxiliary Basis Set <=
+
+  Basis Set: (AUG-CC-PVTZ AUX)
+    Blend: AUG-CC-PVTZ-JKFIT
+    Number of shells: 592
+    Number of basis functions: 2032
+    Number of Cartesian functions: 2536
+    Spherical Harmonics?: true
+    Max angular momentum: 4
+
+  Minimum eigenvalue in the overlap matrix is 1.6742870490E-06.
+  Reciprocal condition number of the overlap matrix is 9.5894979235E-08.
+    Using symmetric orthogonalization.
+
+  ==> Pre-Iterations <==
+
+  SCF Guess: Superposition of Atomic Densities via on-the-fly atomic UHF (no occupation information).
+
+   -------------------------
+    Irrep   Nso     Nmo    
+   -------------------------
+     A        920     920 
+   -------------------------
+    Total     920     920
+   -------------------------
+
+  ==> Iterations <==
+
+                           Total Energy        Delta E     RMS |[F,P]|
+
+   @DF-RHF iter SAD:  -411.97122185682235   -4.11971e+02   0.00000e+00 
+   @DF-RHF iter   1:  -412.37607720369397   -4.04855e-01   8.10769e-04 DIIS/ADIIS
+   @DF-RHF iter   2:  -412.53902656664286   -1.62949e-01   5.37926e-04 DIIS/ADIIS
+   @DF-RHF iter   3:  -412.61786276685530   -7.88362e-02   9.79584e-05 DIIS
+   @DF-RHF iter   4:  -412.62214902677181   -4.28626e-03   3.97942e-05 DIIS
