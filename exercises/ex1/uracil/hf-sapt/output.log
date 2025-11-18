@@ -1,0 +1,2 @@
+2025-11-18:13:21:28,207 INFO     [psi4.driver.task_planner:285] PLANNING Atomic:  keywords={'function_kwargs': {}}
+2025-11-18:13:21:28,208 INFO     [psi4.driver.driver:523] Compute energy(): method=sapt2, basis=aug-cc-pvtz, molecule=uracil_dimer, nre=1040.0053320445304

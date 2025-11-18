@@ -1,3 +1,6 @@
+# Set memory inside the input file
+memory 8 GB
+
 molecule uracil_dimer {
     0 1
     N    -1.4888766    1.1619633     0.0000000 
