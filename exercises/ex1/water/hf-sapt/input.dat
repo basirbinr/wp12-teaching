@@ -1,3 +1,6 @@
+# Allocating 6 GB is usually safe for pVTZ
+memory 20 GB
+
 molecule water_dimer {
     0 1
     O  -1.551007  -0.114520   0.000000
@@ -16,6 +19,9 @@ molecule water_dimer {
 
 set basis aug-cc-pVQZ
 
-# Calculate HF-SAPT2
+energy('sapt0')
 energy('sapt2')
+energy('sapt2+')
+energy('sapt2+(3)')
+energy('sapt2+3')
 
