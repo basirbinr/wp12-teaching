@@ -1,0 +1,20 @@
+memory 8 GB
+
+molecule ar_dimer {
+    0 1
+    ar      0.00000000000000      0.00000000000000      3.63765664851653
+    ar      0.00000000000000      0.00000000000000     -3.63765664851653
+    
+    units bohr
+    no_reorient
+    symmetry c1
+}
+
+# 1. CCSD(T) / aug-cc-pVTZ (This also gives MP2/aVTZ)
+set basis aug-cc-pVTZ
+set freeze_core true
+energy('ccsd(t)')
+
+# 2. MP2 / aug-cc-pVQZ (For extrapolation)
+set basis aug-cc-pVQZ
+energy('mp2')

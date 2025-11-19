@@ -1,0 +1,19 @@
+memory 8 GB
+
+molecule ar_monomer {
+    0 1
+    ar      0.00000000000000      0.00000000000000      0.00000000000000
+    
+    units bohr
+    no_reorient
+    symmetry c1
+}
+
+# 1. CCSD(T) / aug-cc-pVTZ
+set basis aug-cc-pVTZ
+set freeze_core true
+energy('ccsd(t)')
+
+# 2. MP2 / aug-cc-pVQZ
+set basis aug-cc-pVQZ
+energy('mp2')
