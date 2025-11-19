@@ -1,5 +1,5 @@
 # Set memory inside the input file
-memory 8 GB
+memory 30 GB
 
 molecule uracil_dimer {
     0 1

@@ -1,3 +1,4 @@
+memory 20 GB
 molecule water_dimer {
     0 1
     O  -1.551007  -0.114520   0.000000
