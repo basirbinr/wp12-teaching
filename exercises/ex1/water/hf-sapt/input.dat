@@ -1,5 +1,5 @@
 # Allocating 6 GB is usually safe for pVTZ
-memory 6 GB
+memory 20 GB
 
 molecule water_dimer {
     0 1
