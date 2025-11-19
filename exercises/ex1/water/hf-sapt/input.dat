@@ -17,8 +17,11 @@ molecule water_dimer {
     symmetry c1
 }
 
-# CHANGED TO pVTZ to fit in memory
-set basis aug-cc-pVTZ
+set basis aug-cc-pVQZ
 
+energy('sapt0')
 energy('sapt2')
+energy('sapt2+')
+energy('sapt2+(3)')
+energy('sapt2+3')
 
