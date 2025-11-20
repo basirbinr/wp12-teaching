@@ -1,0 +1,6 @@
+2025-11-20:09:26:13,307 INFO     [psi4.driver.task_planner:266] PLANNING Atomic:  keywords={'FREEZE_CORE': 'TRUE', 'function_kwargs': {}}
+2025-11-20:09:26:13,309 INFO     [psi4.driver.driver:499] Compute energy(): method=ccsd(t), basis=aug-cc-pvtz, molecule=ar_monomer, nre=0.0
+2025-11-20:09:26:14,16 INFO     [psi4.driver.driver:502] Return energy(): -527.0487583892482
+2025-11-20:09:26:14,34 INFO     [psi4.driver.task_planner:266] PLANNING Atomic:  keywords={'FREEZE_CORE': 'TRUE', 'CCTRANSORT__WFN': 'CCSD_T', 'function_kwargs': {}}
+2025-11-20:09:26:14,35 INFO     [psi4.driver.driver:499] Compute energy(): method=mp2, basis=aug-cc-pvqz, molecule=ar_monomer, nre=0.0
+2025-11-20:09:26:14,288 INFO     [psi4.driver.driver:502] Return energy(): -527.0489155366564

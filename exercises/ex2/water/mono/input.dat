@@ -11,11 +11,16 @@ molecule h2o_monomer {
     symmetry c1
 }
 
-# 1. CCSD(T) / aug-cc-pVTZ
+# --- 1. CCSD(T) / aug-cc-pVTZ ---
+core.IO.set_default_namespace("h2o_TZ")
 set basis aug-cc-pVTZ
 set freeze_core true
 energy('ccsd(t)')
 
-# 2. MP2 / aug-cc-pVQZ
+# --- reset PSIO scratch before second basis ---
+core.clean()
+
+# --- 2. MP2 / aug-cc-pVQZ ---
+core.IO.set_default_namespace("h2o_QZ")
 set basis aug-cc-pVQZ
-energy('mp2')X
+energy('mp2')
