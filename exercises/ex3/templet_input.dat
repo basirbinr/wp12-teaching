@@ -1,0 +1,16 @@
+memory 8 GB
+
+molecule {
+    0 1
+    # PASTE XYZ COORDINATES HERE (Delete the first 2 lines of the xyz file)
+    # Example:
+    # C  0.000  0.000  0.000
+    # ...
+}
+
+set {
+    basis def2-TZVP
+    dft_functional tpss
+}
+
+energy('dft')
