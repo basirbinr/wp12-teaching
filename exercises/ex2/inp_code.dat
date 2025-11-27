@@ -1,4 +1,108 @@
+That is great\! You have the necessary starting geometries for the **Water Dimer** and **Water Monomer**, as well as the **Argon Dimer**. However, to complete the supermolecular calculation, you are missing one specific file: the **Argon Monomer**.
+
+In a supermolecular approach, you calculate the binding energy ($\Delta E$) as:
+$$\Delta E = E_{\text{dimer}} - (E_{\text{monomer A}} + E_{\text{monomer B}})$$
+
+Since the Argon dimer consists of two identical atoms, you just need to create a coordinate file for a single Argon atom to calculate $E_{\text{monomer}}$.
+
+### **1. Create the Missing Argon Monomer File**
+
+You can create this manually. Since it's a single atom, the position doesn't matter (the origin is fine).
+
+Create a file named `argon_monomer.coord` with the following content:
+
+```text
+$coord
+    0.00000000000000      0.00000000000000      0.00000000000000      ar
+$end
+```
+
+-----
+
+### **2. Workflow for Exercise 1.2**
+
+Now that you have all four coordinate files, here is the exact roadmap to running the calculations in TURBOMOLE.
+
+#### **Directory Structure Setup**
+
+To keep things organized and prevent output files from overwriting each other, set up this folder structure:
+
+```bash
 mkdir -p ex1.2/argon/dimer
 mkdir -p ex1.2/argon/monomer
 mkdir -p ex1.2/water/dimer
 mkdir -p ex1.2/water/monomer
+```
+
+*Copy the respective `.coord` files into these folders.*
+
+#### **Calculation Steps (Repeat for each folder)**
+
+You need to perform calculations with two basis sets (**aug-cc-pVTZ** and **aug-cc-pVQZ**) to extrapolate to the Basis Set Limit (CBS).
+
+**A. Calculations with aug-cc-pVTZ**
+*Perform this for all 4 systems (Ar dimer, Ar monomer, H2O dimer, H2O monomer).*
+
+1.  **Navigate to the folder:**
+    ```bash
+    cd ex1.2/argon/dimer  # (Example)
+    ```
+2.  **Initialize the calculation:**
+    Use `cefine` to set up the input. We request CCSD(T) here because this is the smaller basis set where we can afford it.
+    ```bash
+    cefine_current -b aug-cc-pVTZ -m ccsd(t) -sym c1 argon_dimer.coord
+    ```
+3.  **Run Hartree-Fock (Reference):**
+    ```bash
+    ridft > ridft.out
+    ```
+4.  **Run MP2 (needed for CCSD(T)):**
+    ```bash
+    jobex -ri -level cc2 > jobex_mp2.out
+    ```
+5.  **Run CCSD(T):**
+    ```bash
+    ccsdf12 > ccsd.out
+    ```
+6.  **Extract Data:**
+      * **HF Energy:** `grep "total energy =" ridft.out`
+      * **MP2 Energy:** `grep "Total Energy" jobex_mp2.out`
+      * **CCSD(T) Energy:** Search for "CCSD(T)" in `ccsd.out`.
+
+**B. Calculations with aug-cc-pVQZ**
+*Perform this for all 4 systems.*
+
+1.  **Clean up or use a subfolder (recommended):**
+    ```bash
+    mkdir vqz_calc
+    cd vqz_calc
+    cp ../argon_dimer.coord .
+    ```
+2.  **Initialize the calculation:**
+    We *only* need MP2 here (CCSD(T) is too expensive for QZ).
+    ```bash
+    cefine_current -b aug-cc-pVQZ -m mp2 -sym c1 argon_dimer.coord
+    ```
+3.  **Run Hartree-Fock:**
+    ```bash
+    ridft > ridft.out
+    ```
+4.  **Run MP2:**
+    ```bash
+    ricc2 > ricc2.out
+    ```
+5.  **Extract Data:**
+      * **HF Energy:** `grep "total energy =" ridft.out`
+      * **MP2 Energy:** `grep "Total Energy" ricc2.out`
+
+-----
+
+### **3. The Extrapolation (Focal Point Analysis)**
+
+Once you have the raw numbers, you will calculate the final Binding Energy using the formula:
+
+$$E_{\text{CBS}} \approx E_{\text{MP2/CBS}} + \left( E_{\text{CCSD(T)}} - E_{\text{MP2}} \right)_{\text{aug-cc-pVTZ}}$$
+
+Where $E_{\text{MP2/CBS}}$ is found by extrapolating the correlation energy ($E_{\text{MP2}} - E_{\text{HF}}$) using the coefficients from the exercise table (4.30 and 2.51 for aug-cc-pVXZ).
+
+**Would you like me to generate a Python script to automate the parsing of these output files once you have run them?**
