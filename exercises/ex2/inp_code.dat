@@ -1,0 +1,4 @@
+mkdir -p ex1.2/argon/dimer
+mkdir -p ex1.2/argon/monomer
+mkdir -p ex1.2/water/dimer
+mkdir -p ex1.2/water/monomer
